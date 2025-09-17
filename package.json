@@ -8,11 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
     "canvas-confetti": "1.6.0",
+    "micro": "^10.0.1",
     "next": "^15.5.3",
     "node-fetch": "^3.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "stripe": "^18.5.0",
     "swr": "2.1.2"
   }
 }
