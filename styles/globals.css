@@ -1,0 +1,5 @@
+html,body,#__next{height:100%}
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#081024,#021021);color:#e6eef8}
+.container{max-width:980px;margin:0 auto;padding:20px}
+a{color:#60a5fa}
+button{cursor:pointer}

@@ -1,0 +1,1 @@
+export default function Privacy(){ return (<div style={{padding:24}}><h1>Privacy Policy</h1><p>This site uses Supabase for optional data storage and Stripe for payments. Ads via Google AdSense. Contact: [YOUR_EMAIL]</p></div>) }
