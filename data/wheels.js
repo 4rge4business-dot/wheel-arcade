@@ -30,10 +30,27 @@ export const DEFAULT_WHEELS = [
       { label: '🔥', color: '#F0A0FF' },
       { label: '💎', color: '#C0C0C0' }
     ]
+  },
+  {
+    id: 'pirate_booty',
+    title: 'Pirate Booty',
+    subtitle: 'Free — for scallywags',
+    isPremium: false,
+    segments: [
+      { label: 'Gold', color: '#FFD700' },
+      { label: 'Rum', color: '#A0522D' },
+      { label: 'Parrot', color: '#008000' },
+      { label: 'Anchor', color: '#708090' },
+      { label: 'Map', color: '#DEB887' },
+      { label: 'Kraken', color: '#483D8B' },
+      { label: 'Walk Plank', color: '#A9A9A9' },
+      { label: 'Treasure', color: '#DAA520' }
+    ]
   }
 ]
 
 export const WHEEL_DESCRIPTIONS = [
   { id:'classic', title:'Classic Wheel', blurb:'A friendly 8-slice wheel with points, extra spins, and fun outcomes.' },
-  { id:'emoji_pack', title:'Emoji Pack', blurb:'Premium emoji wheel packed with playful icons. Unlock via Stripe.' }
+  { id:'emoji_pack', title:'Emoji Pack', blurb:'Premium emoji wheel packed with playful icons. Unlock via Stripe.' },
+  { id:'pirate_booty', title:'Pirate Booty', blurb:'Arrr, matey! Spin for pirate treasure and adventure.' }
 ]
