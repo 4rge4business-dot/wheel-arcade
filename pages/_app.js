@@ -1,5 +1,5 @@
-import "@/styles/globals.css";
-import AdBanner from "@/components/AdBanner";
+import "../styles/globals.css";
+import AdBanner from "../components/AdBanner";
 
 export default function App({ Component, pageProps }) {
   return (
