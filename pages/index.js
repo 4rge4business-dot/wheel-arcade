@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Wheel from '../components/Wheel'
 import Settings from '../components/Settings'
 import { DEFAULT_WHEELS, WHEEL_DESCRIPTIONS } from '../data/wheels'
 
 export default function Home(){
+  const [selectedWheel, setSelectedWheel] = useState(DEFAULT_WHEELS[0])
+
   return (
     <div>
       <Head>
@@ -20,7 +23,7 @@ export default function Home(){
       <main className="container">
         <div style={{display:'flex',gap:20,alignItems:'flex-start',flexWrap:'wrap'}}>
           <div style={{flex:'1 1 640px',minWidth:320}}>
-            <Wheel wheel={DEFAULT_WHEELS[0]} />
+            <Wheel segments={selectedWheel.segments} />
           </div>
           <aside style={{width:320}}>
             <h3>Wheels</h3>

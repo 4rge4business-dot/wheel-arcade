@@ -5,9 +5,40 @@
 import { useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
 
-export default function Wheel({ wheel }){
+export default function Wheel({ segments }){
   const [spinning, setSpinning] = useState(false);
   const [angle, setAngle] = useState(0);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    const numSegments = segments.length;
+    const sliceAngle = (2 * Math.PI) / numSegments;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    segments.forEach((segment, i) => {
+      const startAngle = i * sliceAngle;
+      const endAngle = startAngle + sliceAngle;
+
+      ctx.beginPath();
+      ctx.moveTo(200, 200);
+      ctx.arc(200, 200, 190, startAngle, endAngle);
+      ctx.closePath();
+      ctx.fillStyle = segment.color;
+      ctx.fill();
+
+      ctx.save();
+      ctx.translate(200, 200);
+      ctx.rotate(startAngle + sliceAngle / 2);
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 16px Arial';
+      ctx.fillText(segment.label, 170, 10);
+      ctx.restore();
+    });
+  }, [segments]);
 
   function spin(){
     if(spinning) return;
@@ -39,7 +70,7 @@ export default function Wheel({ wheel }){
 
   return (
     <div style={{textAlign:'center'}}>
-      <canvas id="wheelCanvas" width={400} height={400} style={{transform:`rotate(${angle}rad)`}}></canvas>
+      <canvas ref={canvasRef} id="wheelCanvas" width={400} height={400} style={{transform:`rotate(${angle}rad)`}}></canvas>
       <button onClick={spin} disabled={spinning}>Spin</button>
     </div>
   );
